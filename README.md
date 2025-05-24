@@ -45,22 +45,26 @@ The goal is to provide a simple, functional, and extendable interface for managi
 ```bash
 git clone https://github.com/username/user-crud-dashboard.git
 cd user-crud-dashboard
+```
+2. Install dependencies:
 
-    Install dependencies:
-
+```bash
 npm install
 # or
 yarn install
+```
 
-    Start the development server:
-
+3. Start the development server:
+```bash
 npm start
 # or
 yarn start
+```
+4. Open your browser and navigate to:
 
-    Open your browser and navigate to:
-
+```
 http://localhost:3000
+```
 
 Project Structure
 
@@ -116,9 +120,9 @@ Contact
 
 For questions or suggestions, you can reach me at:
 
-    Email: your.email@example.com
+    Email: mohammadhoseindadgostr@gmail.com
 
-    GitHub: github.com/username
+    GitHub: github.com/BlackEagle256
 
 Thank you for checking out this project!
 
