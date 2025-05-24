@@ -104,23 +104,23 @@ For admin panel, open admin-panel.html
 
 For registration form, open index.html
 
-Project Structure
 user-management-system/
-├── frontend/                  # Frontend files
-│   ├── index.html             # Registration form
-│   ├── admin-panel.html       # Admin dashboard
-│   ├── style.css              # Registration form styles
-│   ├── stylePanel.css         # Admin panel styles
-│   ├── app.js                 # Registration form logic
-│   ├── users.js               # Admin panel logic
-│   └── image/                 # Images and icons
+├── frontend/
+│   ├── index.html              # فرم ثبت‌نام
+│   ├── admin-panel.html        # پنل مدیریت کاربران
+│   ├── style.css               # استایل فرم ثبت‌نام
+│   ├── stylePanel.css          # استایل پنل مدیریت
+│   ├── app.js                  # منطق فرم ثبت‌نام
+│   ├── users.js                # منطق پنل مدیریت
+│   └── image/                  # تصاویر و آیکون‌ها
 ├── backend/
-│   ├── server.js              # Main server file
+│   ├── server.js               # فایل اصلی سرور
 │   ├── db/
-│   │   └── userDB.js          # Database connection
+│   │   └── userDB.js           # اتصال پایگاه داده
 │   └── routes/
-│       └── usersRoute.js      # API routes
+│       └── usersRoute.js       # مسیرهای API
 └── README.md                  # This file
+
 API Endpoints
 Method	Endpoint	Description
 POST	/api/users/new-user	Create a new user
