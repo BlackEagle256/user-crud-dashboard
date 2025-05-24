@@ -104,6 +104,7 @@ For admin panel, open admin-panel.html
 
 For registration form, open index.html
 
+```
 user-management-system/
 ├── frontend/
 │   ├── index.html              # فرم ثبت‌نام
@@ -120,6 +121,7 @@ user-management-system/
 │   └── routes/
 │       └── usersRoute.js       # مسیرهای API
 └── README.md                  # This file
+```
 
 API Endpoints
 Method	Endpoint	Description
