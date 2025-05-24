@@ -125,11 +125,3 @@ For questions or suggestions, you can reach me at:
     GitHub: github.com/BlackEagle256
 
 Thank you for checking out this project!
-
-
----
-
-Would you like me to customize it for a specific frontend framework or add API/backend setup details?  
-Also, if you want, I can help generate a shorter version or add badges (build status, license, etc.).
-
-
