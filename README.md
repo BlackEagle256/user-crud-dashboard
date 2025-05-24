@@ -1,127 +1,191 @@
-# User CRUD Dashboard
+# User Management System
 
 ## Project Overview
 
-This project is a User Management Dashboard that allows performing full CRUD operations (Create, Read, Update, Delete) on user data.  
-The goal is to provide a simple, functional, and extendable interface for managing user information.
+A full-stack user management system with admin panel that allows performing CRUD operations (Create, Read, Update, Delete) on user data.  
+The system consists of:
+- A user registration form
+- An admin dashboard to manage users
+- RESTful API backend
 
 ---
 
 ## Features
 
-- **Create Users:** Add new users with customizable details  
-- **Read Users:** View a list of all registered users  
-- **Update Users:** Edit and update user information easily  
-- **Delete Users:** Remove users from the system  
-- **Clean and Intuitive UI:** Built with modern frontend technologies  
-- **Modular and Maintainable Codebase**  
-- **Ready for Extension:** Easily add authentication, filtering, and more
+### Frontend
+- **User Registration:** Clean form with validation
+- **Admin Dashboard:** View all registered users
+- **Edit Users:** Modify user information
+- **Delete Users:** Remove users with confirmation
+- **Responsive Design:** Works on mobile and desktop
+- **Modern UI:** Gradient backgrounds, smooth animations
+
+### Backend
+- **REST API:** Node.js + Express
+- **Database:** MySQL
+- **CRUD Operations:** Create, Read, Update, Delete endpoints
 
 ---
 
 ## Technologies Used
 
-- Programming Language: JavaScript / TypeScript  
-- Frontend Framework: React (or Vue, Angular depending on your stack)  
-- State Management: Context API / Redux / Vuex  
-- Backend (if applicable): Node.js + Express (or any backend used)  
-- Database: MongoDB / MySQL / Other  
-- Utilities: Axios for API calls, React Router for navigation, etc.
+### Frontend
+- HTML5, CSS3, JavaScript
+- Pure CSS (No frameworks)
+- Font Awesome icons
+- Google Fonts (Poppins, Lato)
+
+### Backend
+- Node.js
+- Express.js
+- MySQL
+- CORS middleware
+- Body-parser
 
 ---
 
 ## Installation and Setup
 
 ### Prerequisites
+- Node.js (v14 or higher)
+- MySQL server
+- Git
 
-- Node.js version 14 or higher  
-- npm or yarn package manager  
-- (If backend is separate) Running database instance
-
-### Steps to Run Locally
-
+### Backend Setup
 1. Clone the repository:
-
 ```bash
-git clone https://github.com/username/user-crud-dashboard.git
-cd user-crud-dashboard
+git clone https://github.com/BlackEagle256/user-management-system.git
+cd user-management-system
 ```
-2. Install dependencies:
+
+Install dependencies:
 
 ```bash
 npm install
-# or
-yarn install
 ```
 
-3. Start the development server:
+Set up MySQL database:
+
+```sql
+CREATE DATABASE usersformdb;
+USE usersformdb;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    CREATED_AT VARCHAR(255) NOT NULL
+);
+```
+
+Configure database connection in db/userDB.js:
+
+```javascript
+const mysql = require('mysql');
+
+const userDB = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',          // Your MySQL username
+    password: '',          // Your MySQL password
+    database: 'usersformdb'
+});
+```
+Start the server:
+
 ```bash
-npm start
-# or
-yarn start
+node server.js
 ```
-4. Open your browser and navigate to:
 
-```
-http://localhost:3000
-```
+Frontend Setup
+Open the frontend folder in your browser or use a local server
+
+For admin panel, open admin-panel.html
+
+For registration form, open index.html
 
 Project Structure
-
-/src
-  /components    # UI components
-  /pages         # Different dashboard pages
-  /services      # API calls and data management
-  /utils         # Helper functions
-  App.js         # Main application entry
-  index.js       # Application rendering into DOM
-
+user-management-system/
+├── frontend/                  # Frontend files
+│   ├── index.html             # Registration form
+│   ├── admin-panel.html       # Admin dashboard
+│   ├── style.css              # Registration form styles
+│   ├── stylePanel.css         # Admin panel styles
+│   ├── app.js                 # Registration form logic
+│   ├── users.js               # Admin panel logic
+│   └── image/                 # Images and icons
+├── backend/
+│   ├── server.js              # Main server file
+│   ├── db/
+│   │   └── userDB.js          # Database connection
+│   └── routes/
+│       └── usersRoute.js      # API routes
+└── README.md                  # This file
+API Endpoints
+Method	Endpoint	Description
+POST	/api/users/new-user	Create a new user
+GET	/api/users/all	Get all users
+DELETE	/api/users/remove/:id	Delete a user by ID
+PATCH	/api/users/edit/:id	Update a user by ID
+GET	/api/users/select/:id	Get a single user by ID
 How to Use
+Registration Form
 
-    Use the "Add User" form to create a new user.
+Fill in first name, last name, username and password
 
-    View the list of users on the main page.
+Click "Register" to create a new user
 
-    Click the "Edit" button next to a user to modify their information.
+Admin Dashboard
 
-    Click the "Delete" button to remove a user.
+View all registered users
 
-    Changes are reflected immediately in the UI.
+Click "Edit" to modify user information
+
+Click "Delete" to remove a user (with confirmation)
+
+Changes are reflected immediately
 
 Future Improvements
+Add form validation
 
-    Add Authentication (Login/Signup)
+Implement user authentication
 
-    Implement Role-Based Access Control
+Add password hashing
 
-    Add User Detail View
+Implement search functionality
 
-    Form Validation and Error Handling
+Add pagination for user list
 
-    Unit Tests and End-to-End Testing
+Implement role-based access control
 
-    Search and Filter functionality in User List
+Add unit tests
+
+Security Considerations
+⚠️ Important: This is a demo project and has some security issues that should be addressed before production use:
+
+Passwords are stored in plain text (should be hashed)
+
+No input sanitization (SQL injection risk)
+
+No authentication for admin panel
+
+No rate limiting on API endpoints
 
 Troubleshooting
+Database connection issues: Verify MySQL credentials in userDB.js
 
-    API Connection Issues: Make sure the API endpoint URL is correctly set in configuration.
+CORS errors: Ensure backend server is running and CORS is enabled
 
-    Dependency Installation Errors: Update Node.js and npm to the latest stable versions.
+API not responding: Check server logs for errors
 
-    CORS Errors: Check backend CORS settings if backend is separate.
+Form not submitting: Verify all fields are filled
 
-Contributing
-
-Contributions are welcome! Feel free to submit pull requests or open issues to improve the project.
 License
+MIT License
 
-This project is licensed under the MIT License.
 Contact
+For questions or suggestions, contact:
 
-For questions or suggestions, you can reach me at:
+Email: mohammadhoseindadgostr@gmail.com
 
-    Email: mohammadhoseindadgostr@gmail.com
-
-    GitHub: github.com/BlackEagle256
-
-Thank you for checking out this project!
+GitHub: github.com/BlackEagle256
