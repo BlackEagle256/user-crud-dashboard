@@ -52,6 +52,7 @@ A full-stack user management application with an admin dashboard that enables co
 ```bash
 git clone https://github.com/BlackEagle256/user-management-system.git
 cd user-management-system
+node db/setup.js
 npm install
 ```
 
